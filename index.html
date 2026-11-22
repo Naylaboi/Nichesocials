@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niche Socials - nichesocials.name.ng</title>
+<!-- Official Paystack Inline Script -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#090d16;color:#f3f6fc}
+header{background:#05080f;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,.45);border-bottom:1px solid #1b2842;position:sticky;top:0;z-index:10}
+.logo-img{height:42px;width:auto;border-radius:6px}
+.logo-text{font-weight:900;font-size:22px;line-height:1}
+.logo-text .niche{color:#3b82f6}.logo-text .soc{color:#ffffff}
+.logo-text small{display:block;font-size:9px;letter-spacing:3px;color:#93c5fd;font-weight:700;margin-top:2px}
+nav a{color:#e2e8f0;text-decoration:none;margin-left:12px;font-size:14px;font-weight:bold}
+nav a:hover{color:#60a5fa}
+.hero{background:linear-gradient(160deg,#05080f 0%,#0b1d45 55%,#133885 100%);color:white;padding:36px 20px 30px;text-align:center;border-radius:0 0 24px 24px;border-bottom:1px solid #1e3a8a}
+.hero h1{font-size:32px;line-height:1.1}.hero p{margin:14px 0;color:#cbd5e1;font-size:14px}
+.btn{background:#2563eb;color:white;padding:13px 22px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:#1d4ed8}
+.btn-sm{padding:8px 12px;font-size:12px;border-radius:8px;border:none;cursor:pointer;font-weight:bold}
+.btn-danger{background:#dc2626;color:white}
+.btn-secondary{background:#111827;color:#f8fafc;border:1px solid #334155}
+.card{background:#101726;margin:14px;border-radius:16px;padding:18px;box-shadow:0 6px 20px rgba(0,0,0,.35);border:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.card-left{display:flex;gap:12px;align-items:flex-start}
+.icon{width:48px;height:48px;border-radius:12px;background:#0b1d45;border:1px solid #1e3a8a;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.card h3{font-size:17px;margin-bottom:4px;color:#ffffff}.card p{font-size:13px;color:#94a3b8}
+.cat-tag{display:inline-block;font-size:11px;font-weight:700;color:#93c5fd;background:#0b1d45;border:1px solid #1d4ed8;padding:2px 8px;border-radius:999px;margin-bottom:6px}
+.stock-badge{color:#60a5fa;font-weight:700;margin-left:4px}
+.out-badge{color:#f87171;font-weight:700;margin-left:4px}
+.price{font-size:20px;font-weight:900;color:#60a5fa;white-space:nowrap}
+.buy-btn{background:#2563eb;color:white;border:none;padding:9px 14px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:8px}
+.buy-btn:hover{background:#1d4ed8}
+.buy-btn:disabled{background:#334155;color:#94a3b8;cursor:not-allowed}
+.section{padding:8px 4px}
+.section h2{padding:14px 15px 4px;font-size:24px;color:#ffffff}
+.card h2,.card h3{padding:0}
+input,select,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #26354f;border-radius:10px;background:#070b14;color:#f8fafc}
+input::placeholder,textarea::placeholder{color:#64748b}
+textarea{min-height:110px;resize:vertical;font-family:monospace;font-size:13px}
+.hidden{display:none}
+.wallet{background:linear-gradient(150deg,#05080f 0%,#0b1d45 100%);color:white;border-radius:16px;padding:20px;margin:15px;border:1px solid #1e3a8a}
+.wallet h2{font-size:36px;margin:8px 0;padding:0;color:#ffffff}
+.vacc{background:#070b14;border:1px dashed #3b82f6;border-radius:12px;padding:14px;color:#cbd5e1;margin-top:12px;font-size:13px;line-height:1.5}
+.fee-box{background:#0b1528;border:1px solid #1e3a8a;border-radius:12px;padding:12px;color:#e2e8f0;margin-top:12px;font-size:14px}
+.trust{background:#0b1d45;border:1px solid #1e3a8a;border-radius:10px;padding:12px;margin:15px;font-size:13px;text-align:center;color:#dbeafe}
+.admin-top{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px}
+.stat{background:#0b1d45;border:1px solid #1e3a8a;color:white;padding:15px;border-radius:12px}.stat b{font-size:22px;color:#93c5fd}
+.tx-item{padding:10px 0;border-bottom:1px solid #1e293b;font-size:13px;color:#e2e8f0}
+.cred-box{background:#070b14;border:1px solid #2563eb;border-radius:10px;padding:10px;margin-top:8px;font-family:monospace;font-size:13px;color:#93c5fd;word-break:break-all}
+.active-user-bar{background:#0b1d45;border:1px solid #2563eb;border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px;color:#eff6ff;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.prod-admin-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #1e293b}
+.prod-admin-actions{display:flex;gap:6px;flex-shrink:0}
+footer{text-align:center;padding:20px;font-size:13px;color:#64748b}
+.hero-logo{height:58px;background:#ffffff;padding:6px 12px;border-radius:12px;margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Niche Socials" class="logo-img" onerror="this.style.display='none';document.getElementById('fallbackLogo').style.display='block'">
+  <div id="fallbackLogo" style="display:none" class="logo-text"><span class="niche">NICHE</span> <span class="soc">SOCIALS</span><small>.NAME.NG</small></div>
+  <nav>
+    <a href="#" onclick="show('home')">Home</a>
+    <a href="#" onclick="show('wallet')">Wallet</a>
+    <a href="#" onclick="show('adminLogin')">Admin</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div id="home">
+  <div class="hero">
+    <img src="logo.png" alt="Niche Socials Logo" class="hero-logo" onerror="this.style.display='none'">
+    <h1>Accounts, VPNs &<br>TV Access</h1>
+    <p>Instant login delivery • Trusted • Secure Payment via Paystack</p>
+    <button class="btn" onclick="show('wallet')">Create Account & Fund Wallet</button>
+  </div>
+
+  <div class="section">
+    <h2>Our Services</h2>
+    <div id="servicesList"></div>
+
+    <div class="trust">🛡️ All payments secured by Paystack (Bank Transfer, Card & USSD) • 24/7 support</div>
+    <p style="text-align:center;font-size:13px;color:#64748b">nichesocials.name.ng • Trusted digital marketplace</p>
+  </div>
+</div>
+
+<!-- WALLET -->
+<div id="wallet" class="hidden">
+  <div class="section">
+    <div class="card" style="display:block">
+      <h2>Customer Account</h2>
+      <p style="margin-bottom:8px">Choose a unique username and save your details before funding or ordering.</p>
+
+      <div id="activeUserBanner" class="active-user-bar hidden">
+        <div id="activeUserSummary"></div>
+        <button class="btn-sm btn-secondary" onclick="logoutUser()">Switch User</button>
+      </div>
+
+      <input id="userHandle" placeholder="Unique Username e.g. chidera_niche (cannot be reused)">
+      <input id="userName" placeholder="Your Full Name e.g. Chidera">
+      <input id="userEmail" type="email" placeholder="Valid Email Address e.g. chidera@gmail.com">
+      <input id="userWhatsapp" type="tel" placeholder="WhatsApp Number for Order Delivery">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" onclick="saveProfile()">Save / Register Account</button>
+        <button class="btn btn-secondary" onclick="loginExistingUser()">Login Existing Username</button>
+      </div>
+    </div>
+
+    <div class="wallet">
+      <p>My Wallet Balance</p>
+      <h2>₦<span id="balance">0</span></h2>
+      <div class="fee-box">
+        <b>Fund Wallet via Paystack:</b><br>
+        ₦<span id="feeDisplay">30</span> service fee per deposit.<br><br>
+        <input id="depositAmount" type="number" placeholder="Enter amount e.g. 5000" value="5000" oninput="updateFeePreview()">
+        <button class="btn" onclick="payWithPaystack()">Pay Now with Paystack</button>
+        <p style="margin-top:8px" id="feePreview">Example: Deposit ₦5,000 → Fee ₦30 → You receive <b>₦4,970</b></p>
+      </div>
+      <div class="vacc">
+        <b>How Payment Works:</b><br>
+        Click <b>Pay Now with Paystack</b> above to pay securely via <b>Instant Bank Transfer, Card, or USSD</b>. Your wallet updates immediately after payment confirmation, and account logins appear right below after purchase.
+      </div>
+    </div>
+
+    <div class="card" style="display:block">
+      <h3>My Purchased Logins</h3>
+      <div id="deliveredLogins" style="margin-top:8px">No account logins delivered yet.</div>
+    </div>
+
+    <div class="card" style="display:block">
+      <h3>Transaction History</h3>
+      <div id="history" style="margin-top:8px">No transactions yet.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div id="adminLogin" class="hidden">
+  <div class="section">
+    <div class="card" style="display:block">
+      <h2>Admin Login</h2>
+      <input id="adminPass" type="password" placeholder="Enter Admin Password">
+      <button class="btn" onclick="loginAdmin()">Login</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="admin" class="hidden">
+  <div class="section">
+    <h2>Admin Dashboard - Niche Socials</h2>
+    <div class="admin-top">
+      <div class="stat">Registered Users<br><b id="totalUsers">0</b></div>
+      <div class="stat">Total Orders<br><b id="totalOrders">0</b></div>
+      <div class="stat">Total Revenue<br><b>₦<span id="totalRev">0</span></b></div>
+      <div class="stat" style="background:#1d4ed8">Service Fees Earned<br><b>₦<span id="totalFees">0</span></b></div>
+      <div class="stat">Total Deposits<br><b id="totalDeposits">0</b></div>
+    </div>
+
+    <div class="card" style="display:block">
+      <h3 id="productFormTitle">Create New Product</h3>
+      <input type="hidden" id="editProductId">
+      <input id="prodName" placeholder="Product Name e.g. HMA VPN 1-month access">
+      <input id="prodDesc" placeholder="Short Description e.g. Instant login delivery • 1 month access">
+      <input id="prodPrice" type="number" placeholder="Price in Naira (₦) e.g. 3000">
+      <select id="prodIcon">
+        <option value="📘|Facebook accounts">📘 Facebook accounts</option>
+        <option value="📸|Instagram accounts">📸 Instagram accounts</option>
+        <option value="🎬|TikTok accounts">🎬 TikTok accounts</option>
+        <option value="🛡️|VPNs">🛡️ VPNs</option>
+        <option value="📺|TV access">📺 TV access</option>
+      </select>
+      <label style="display:block;font-size:13px;font-weight:bold;margin-top:8px;color:#e2e8f0">
+        Account Logins Stock Pool (1 login per line — leave empty for non-credential services)
+      </label>
+      <textarea id="prodCredentials" placeholder="Paste one login per line, e.g.:&#10;hma_user1@mail.com:Pass123!&#10;hma_user2@mail.com:Pass456!"></textarea>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">
+        <button class="btn" id="saveProductBtn" onclick="saveProduct()">Add Product</button>
+        <button class="btn btn-secondary hidden" id="cancelEditBtn" onclick="resetProductForm()">Cancel Edit</button>
+      </div>
+    </div>
+
+    <div class="card" style="display:block">
+      <h3>Manage Products</h3>
+      <div id="adminProductsList" style="margin-top:8px">No products yet.</div>
+    </div>
+
+    <div class="card" style="display:block">
+      <h3>Store Pricing & Fees</h3>
+      <p style="margin-top:8px">VPN 1 Month Price (₦): <input id="vpnPriceInput" type="number" value="3000"></p>
+      <p>Deposit Service Fee (₦): <input id="serviceFeeInput" type="number" value="30"></p>
+      <button class="btn" onclick="updateStoreSettings()">Save Prices & Fee</button>
+    </div>
+
+    <div class="card" style="display:block">
+      <h3>Customer & Order Logs</h3>
+      <div id="userList" style="margin-top:8px">No activity yet.</div>
+    </div>
+  </div>
+</div>
+
+<footer>Niche Socials • nichesocials.name.ng • © 2026</footer>
+
+<script>
+// ==========================================
+// CONFIGURATION
+// ==========================================
+const PAYSTACK_PUBLIC_KEY = 'pk_test_c942a688e9de4819c63041907d577aced024b9be';
+const ADMIN_PASSWORD = 'NzeribeNiche70@';
+const STORAGE_KEY = 'nichesocials_store_v1';
+
+const CATEGORIES = [
+  { key: '📘|Facebook accounts', icon: '📘', label: 'Facebook accounts' },
+  { key: '📸|Instagram accounts', icon: '📸', label: 'Instagram accounts' },
+  { key: '🎬|TikTok accounts', icon: '🎬', label: 'TikTok accounts' },
+  { key: '🛡️|VPNs', icon: '🛡️', label: 'VPNs' },
+  { key: '📺|TV access', icon: '📺', label: 'TV access' }
+];
+
+const DEFAULT_PRODUCTS = [
+  { id: 'vpn_1m', name: 'HMA VPN 1-month access', desc: 'Fast, secure & private connection • Instant login delivery', price: 3000, icon: '🛡️', category: 'VPNs', isVpn: true, credentials: [] },
+  { id: 'fb_acc', name: 'Facebook Account', desc: 'Ready-to-use account • Instant login delivery', price: 5000, icon: '📘', category: 'Facebook accounts', isVpn: false, credentials: [] },
+  { id: 'ig_acc', name: 'Instagram Account', desc: 'Ready-to-use account • Instant login delivery', price: 7000, icon: '📸', category: 'Instagram accounts', isVpn: false, credentials: [] },
+  { id: 'tt_acc', name: 'TikTok Account', desc: 'Ready-to-use account • Instant login delivery', price: 8000, icon: '🎬', category: 'TikTok accounts', isVpn: false, credentials: [] },
+  { id: 'tv_acc', name: 'TV Access Subscription', desc: 'Streaming access • Instant login delivery', price: 4500, icon: '📺', category: 'TV access', isVpn: false, credentials: [] }
+];
+
+function parseCategoryOption(rawVal) {
+  const matched = CATEGORIES.find(c => c.key === rawVal || c.label === rawVal || c.icon === rawVal);
+  if (matched) return { icon: matched.icon, category: matched.label, key: matched.key };
+  return { icon: '📘', category: 'Facebook accounts', key: '📘|Facebook accounts' };
+}
+
+function createEmptyUserRecord(username, name, email, whatsapp) {
+  return {
+    username,
+    name,
+    email,
+    whatsapp,
+    balance: 0,
+    orders: 0,
+    totalDeposits: 0,
+    history: [],
+    deliveredLogins: []
+  };
+}
+
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+  users: {},
+  activeUsername: null,
+  orders: 0,
+  revenue: 0,
+  totalFees: 0,
+  totalDeposits: 0,
+  serviceFee: 30,
+  vpnPrice: 3000,
+  products: DEFAULT_PRODUCTS.map(p => ({ ...p, credentials: [...p.credentials] })),
+  adminLogs: []
+};
+
+if (!state.users || typeof state.users !== 'object') {
+  state.users = {};
+}
+if (!Array.isArray(state.products) || state.products.length === 0) {
+  state.products = DEFAULT_PRODUCTS.map(p => ({ ...p, credentials: [...p.credentials] }));
+}
+state.products.forEach(p => {
+  if (!Array.isArray(p.credentials)) p.credentials = [];
+  const parsed = parseCategoryOption(p.category || p.icon);
+  p.icon = parsed.icon;
+  p.category = parsed.category;
+  p.isVpn = parsed.category === 'VPNs';
+});
+
+function getCurrentUser() {
+  if (!state.activeUsername) return null;
+  return state.users[state.activeUsername] || null;
+}
+
+function normalizeUsername(raw) {
+  return String(raw || '').trim().toLowerCase();
+}
+
+function isValidUsername(u) {
+  return /^[a-z0-9._-]{3,24}$/.test(u);
+}
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  renderUI();
+}
+
+function show(id) {
+  ['home', 'wallet', 'adminLogin', 'admin'].forEach(x => {
+    document.getElementById(x).classList.add('hidden');
+  });
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo(0, 0);
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function saveProfile() {
+  const username = normalizeUsername(document.getElementById('userHandle').value);
+  const name = document.getElementById('userName').value.trim();
+  const email = document.getElementById('userEmail').value.trim();
+  const whatsapp = document.getElementById('userWhatsapp').value.trim();
+
+  if (!isValidUsername(username)) {
+    alert('Choose a unique username of 3-24 characters using lowercase letters, numbers, dots, underscores, or hyphens.');
+    return;
+  }
+  if (!name || !isValidEmail(email) || !whatsapp) {
+    alert('Please enter your Name, a valid Email address, and your WhatsApp number.');
+    return;
+  }
+
+  const currentUser = getCurrentUser();
+  const existingRecord = state.users[username];
+
+  if (existingRecord && (!currentUser || currentUser.username !== username)) {
+    alert(`The username "${username}" is already taken by another user. Please choose a different username or use "Login Existing Username".`);
+    return;
+  }
+
+  if (currentUser && currentUser.username === username) {
+    currentUser.name = name;
+    currentUser.email = email;
+    currentUser.whatsapp = whatsapp;
+    saveState();
+    alert(`Profile updated for @${username}.`);
+    return;
+  }
+
+  const newUser = createEmptyUserRecord(username, name, email, whatsapp);
+  state.users[username] = newUser;
+  state.activeUsername = username;
+  state.adminLogs.unshift(`👤 New User: @${username} (${name} | ${email} | WA: ${whatsapp})`);
+  saveState();
+  alert(`Account registered with unique username @${username}! You can now fund your wallet via Paystack.`);
+}
+
+function loginExistingUser() {
+  const username = normalizeUsername(document.getElementById('userHandle').value);
+  if (!username || !state.users[username]) {
+    alert('No registered account found with that username. Fill all fields and click "Save / Register Account" to claim a new unique username.');
+    return;
+  }
+  state.activeUsername = username;
+  saveState();
+  alert(`Logged in as @${username}.`);
+}
+
+function logoutUser() {
+  state.activeUsername = null;
+  document.getElementById('userHandle').value = '';
+  document.getElementById('userName').value = '';
+  document.getElementById('userEmail').value = '';
+  document.getElementById('userWhatsapp').value = '';
+  saveState();
+}
+
+function updateFeePreview() {
+  const amt = parseInt(document.getElementById('depositAmount').value) || 0;
+  const net = Math.max(0, amt - state.serviceFee);
+  document.getElementById('feePreview').innerHTML =
+    `Deposit ₦${amt.toLocaleString()} → Fee ₦${state.serviceFee.toLocaleString()} → You receive <b>₦${net.toLocaleString()}</b>`;
+}
+
+function payWithPaystack() {
+  const user = getCurrentUser();
+  if (!user || !isValidEmail(user.email)) {
+    alert('Please register/login with your unique username, name, email, and WhatsApp number first.');
+    return;
+  }
+
+  if (PAYSTACK_PUBLIC_KEY.includes('REPLACE_WITH')) {
+    alert('Paystack Public Key not set yet. Add your pk_test_ or pk_live_ key in the code first.');
+    return;
+  }
+
+  const depositAmount = parseInt(document.getElementById('depositAmount').value) || 0;
+  if (depositAmount <= state.serviceFee) {
+    alert(`Deposit amount must be greater than the ₦${state.serviceFee} service fee.`);
+    return;
+  }
+
+  const handler = PaystackPop.setup({
+    key: PAYSTACK_PUBLIC_KEY,
+    email: user.email,
+    amount: depositAmount * 100,
+    currency: 'NGN',
+    ref: 'NS_' + Math.floor((Math.random() * 1000000000) + 1),
+    metadata: {
+      custom_fields: [
+        { display_name: 'Username', variable_name: 'username', value: user.username },
+        { display_name: 'Customer Name', variable_name: 'customer_name', value: user.name },
+        { display_name: 'WhatsApp', variable_name: 'whatsapp', value: user.whatsapp }
+      ]
+    },
+    callback: function(response) {
+      const creditAmount = depositAmount - state.serviceFee;
+      user.balance += creditAmount;
+      user.totalDeposits += 1;
+      state.totalFees += state.serviceFee;
+      state.totalDeposits += 1;
+
+      const time = new Date().toLocaleString();
+      user.history.unshift(`✅ [${time}] Deposited ₦${depositAmount.toLocaleString()} (Fee: ₦${state.serviceFee}) → Credited ₦${creditAmount.toLocaleString()} | Ref: ${response.reference}`);
+      state.adminLogs.unshift(`💰 Deposit: ₦${depositAmount.toLocaleString()} by @${user.username} (${user.name}, Ref: ${response.reference})`);
+      saveState();
+
+      alert(`Payment successful! Ref: ${response.reference}\n₦${creditAmount.toLocaleString()} has been added to @${user.username}'s wallet.`);
+    },
+    onClose: function() {
+      alert('Payment window closed.');
+    }
+  });
+
+  handler.openIframe();
+}
+
+function buyById(productId) {
+  const item = state.products.find(p => p.id === productId);
+  if (!item) return;
+
+  const user = getCurrentUser();
+  if (!user) {
+    alert('Please register or log in with your unique username and fund your wallet first.');
+    show('wallet');
+    return;
+  }
+
+  const hasStockPool = Array.isArray(item.credentials) && item.credentials.length > 0;
+  if (hasStockPool && item.credentials.length <= 0) {
+    alert(`${item.name} is currently out of stock.`);
+    return;
+  }
+
+  const price = item.isVpn ? state.vpnPrice : item.price;
+  if (user.balance < price) {
+    alert(`Insufficient balance (₦${user.balance.toLocaleString()}). You need ₦${price.toLocaleString()}. Please fund your wallet first.`);
+    show('wallet');
+    return;
+  }
+
+  user.balance -= price;
+  user.orders += 1;
+  state.orders += 1;
+  state.revenue += price;
+
+  let assignedCredential = null;
+  if (hasStockPool) {
+    assignedCredential = item.credentials.shift();
+  }
+
+  const time = new Date().toLocaleString();
+  if (assignedCredential !== null) {
+    user.deliveredLogins.unshift({
+      productName: item.name,
+      credential: assignedCredential,
+      time,
+      price
+    });
+    user.history.unshift(`🛒 [${time}] Bought ${item.name} (-₦${price.toLocaleString()}) → Login delivered`);
+    state.adminLogs.unshift(`📦 Auto-Delivered: ${item.name} (₦${price.toLocaleString()}) to @${user.username} | Remaining stock: ${item.credentials.length}`);
+    saveState();
+    alert(`Purchase successful for ${item.name}!\n\nYour Account Login:\n${assignedCredential}\n\nSaved under "My Purchased Logins" in your account.`);
+  } else {
+    user.history.unshift(`🛒 [${time}] Ordered ${item.name} (-₦${price.toLocaleString()})`);
+    state.adminLogs.unshift(`📦 Order: ${item.name} (₦${price.toLocaleString()}) by @${user.username} | WA: ${user.whatsapp}`);
+    saveState();
+    alert(`Order confirmed for ${item.name}! We will deliver to your WhatsApp (${user.whatsapp}) shortly.`);
+  }
+}
+
+function loginAdmin() {
+  const entered = document.getElementById('adminPass').value;
+  if (entered === ADMIN_PASSWORD) {
+    document.getElementById('adminPass').value = '';
+    show('admin');
+  } else {
+    alert('Wrong admin password.');
+  }
+}
+
+function parseCredentialLines(rawText) {
+  return String(rawText || '')
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(line => line.length > 0);
+}
+
+function saveProduct() {
+  const editId = document.getElementById('editProductId').value.trim();
+  const name = document.getElementById('prodName').value.trim();
+  const desc = document.getElementById('prodDesc').value.trim() || 'Fast delivery • Trusted service';
+  const price = parseInt(document.getElementById('prodPrice').value);
+  const parsedCat = parseCategoryOption(document.getElementById('prodIcon').value);
+  const credentials = parseCredentialLines(document.getElementById('prodCredentials').value);
+
+  if (!name || isNaN(price) || price <= 0) {
+    alert('Please enter a valid product name and a price greater than ₦0.');
+    return;
+  }
+
+  if (editId) {
+    const idx = state.products.findIndex(p => p.id === editId);
+    if (idx !== -1) {
+      state.products[idx].name = name;
+      state.products[idx].desc = desc;
+      state.products[idx].price = price;
+      state.products[idx].icon = parsedCat.icon;
+      state.products[idx].category = parsedCat.category;
+      state.products[idx].isVpn = parsedCat.category === 'VPNs';
+      state.products[idx].credentials = credentials;
+      if (state.products[idx].isVpn) {
+        state.vpnPrice = price;
+      }
+      state.adminLogs.unshift(`✏️ Updated Product: ${name} [${parsedCat.category}] (₦${price.toLocaleString()} | Stock: ${credentials.length})`);
+    }
+    resetProductForm();
+    saveState();
+    alert(`Updated "${name}"!`);
+  } else {
+    const newProd = {
+      id: 'prod_' + Date.now() + '_' + Math.floor(Math.random() * 1000),
+      name,
+      desc,
+      price,
+      icon: parsedCat.icon,
+      category: parsedCat.category,
+      isVpn: parsedCat.category === 'VPNs',
+      credentials
+    };
+    state.products.push(newProd);
+    state.adminLogs.unshift(`➕ Created Product: ${name} [${parsedCat.category}] (₦${price.toLocaleString()} | Stock: ${credentials.length})`);
+    resetProductForm();
+    saveState();
+    alert(`Added "${name}" to Our Services!`);
+  }
+}
+
+function startEditProduct(id) {
+  const item = state.products.find(p => p.id === id);
+  if (!item) return;
+  const effectivePrice = item.isVpn ? state.vpnPrice : item.price;
+  const parsedCat = parseCategoryOption(item.category || item.icon);
+
+  document.getElementById('editProductId').value = item.id;
+  document.getElementById('prodName').value = item.name;
+  document.getElementById('prodDesc').value = item.desc;
+  document.getElementById('prodPrice').value = effectivePrice;
+  document.getElementById('prodIcon').value = parsedCat.key;
+  document.getElementById('prodCredentials').value = Array.isArray(item.credentials) ? item.credentials.join('\n') : '';
+  document.getElementById('productFormTitle').innerText = 'Edit Product';
+  document.getElementById('saveProductBtn').innerText = 'Save Changes';
+  document.getElementById('cancelEditBtn').classList.remove('hidden');
+  document.getElementById('productFormTitle').scrollIntoView({ behavior: 'smooth' });
+}
+
+function deleteProduct(id) {
+  const item = state.products.find(p => p.id === id);
+  if (!item) return;
+  if (!confirm(`Delete "${item.name}" from your store?`)) return;
+
+  if (document.getElementById('editProductId').value === id) {
+    resetProductForm();
+  }
+  state.products = state.products.filter(p => p.id !== id);
+  state.adminLogs.unshift(`🗑️ Deleted Product: ${item.name}`);
+  saveState();
+}
+
+function resetProductForm() {
+  document.getElementById('editProductId').value = '';
+  document.getElementById('prodName').value = '';
+  document.getElementById('prodDesc').value = '';
+  document.getElementById('prodPrice').value = '';
+  document.getElementById('prodIcon').value = CATEGORIES[0].key;
+  document.getElementById('prodCredentials').value = '';
+  document.getElementById('productFormTitle').innerText = 'Create New Product';
+  document.getElementById('saveProductBtn').innerText = 'Add Product';
+  document.getElementById('cancelEditBtn').classList.add('hidden');
+}
+
+function updateStoreSettings() {
+  const newVpnPrice = parseInt(document.getElementById('vpnPriceInput').value);
+  const newFee = parseInt(document.getElementById('serviceFeeInput').value);
+
+  if (newVpnPrice > 0) {
+    state.vpnPrice = newVpnPrice;
+    state.products.forEach(p => {
+      if (p.isVpn || p.category === 'VPNs') p.price = newVpnPrice;
+    });
+  }
+  if (newFee >= 0) state.serviceFee = newFee;
+
+  saveState();
+  alert(`Updated! VPN Price: ₦${state.vpnPrice.toLocaleString()} | Service Fee: ₦${state.serviceFee.toLocaleString()}`);
+}
+
+function renderServices() {
+  const container = document.getElementById('servicesList');
+  if (!state.products.length) {
+    container.innerHTML = '<div class="card"><p>No services available right now.</p></div>';
+    return;
+  }
+
+  container.innerHTML = state.products.map(p => {
+    const parsedCat = parseCategoryOption(p.category || p.icon);
+    const displayPrice = p.isVpn ? state.vpnPrice : p.price;
+    const creds = Array.isArray(p.credentials) ? p.credentials : [];
+    const hasStockPool = creds.length > 0 || p.isVpn;
+    const stockCount = creds.length;
+    const isSoldOut = hasStockPool && stockCount <= 0;
+
+    let stockLabel = '';
+    if (hasStockPool) {
+      stockLabel = isSoldOut
+        ? `<span class="out-badge">(0 available)</span>`
+        : `<span class="stock-badge">(${stockCount} available)</span>`;
+    }
+
+    return `
+      <div class="card">
+        <div class="card-left">
+          <div class="icon">${escapeHtml(parsedCat.icon)}</div>
+          <div>
+            <span class="cat-tag">${escapeHtml(parsedCat.category)}</span>
+            <h3>${escapeHtml(p.name)} ${stockLabel}</h3>
+            <p>${escapeHtml(p.desc)}</p>
+            <button class="buy-btn" ${isSoldOut ? 'disabled' : ''} onclick="buyById('${escapeHtml(p.id)}')">${isSoldOut ? 'Out of Stock' : 'Buy Now'}</button>
+          </div>
+        </div>
+        <div class="price">₦${displayPrice.toLocaleString()}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderAdminProducts() {
+  const container = document.getElementById('adminProductsList');
+  if (!state.products.length) {
+    container.innerHTML = 'No products yet. Use "Create New Product" above to add one.';
+    return;
+  }
+
+  container.innerHTML = state.products.map(p => {
+    const parsedCat = parseCategoryOption(p.category || p.icon);
+    const displayPrice = p.isVpn ? state.vpnPrice : p.price;
+    const stockCount = Array.isArray(p.credentials) ? p.credentials.length : 0;
+    return `
+      <div class="prod-admin-row">
+        <div>
+          <b>${escapeHtml(parsedCat.icon)} ${escapeHtml(p.name)}</b> — ₦${displayPrice.toLocaleString()} <b>(${stockCount} logins in stock)</b><br>
+          <small style="color:#94a3b8">${escapeHtml(parsedCat.category)} • ${escapeHtml(p.desc)}</small>
+        </div>
+        <div class="prod-admin-actions">
+          <button class="btn-sm btn-secondary" onclick="startEditProduct('${escapeHtml(p.id)}')">Edit</button>
+          <button class="btn-sm btn-danger" onclick="deleteProduct('${escapeHtml(p.id)}')">Delete</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderUI() {
+  renderServices();
+  renderAdminProducts();
+
+  const user = getCurrentUser();
+  const banner = document.getElementById('activeUserBanner');
+  if (user) {
+    banner.classList.remove('hidden');
+    document.getElementById('activeUserSummary').innerHTML =
+      `Active Account: <b>@${escapeHtml(user.username)}</b> (${escapeHtml(user.name)})`;
+    document.getElementById('userHandle').value = user.username;
+    document.getElementById('userName').value = user.name;
+    document.getElementById('userEmail').value = user.email;
+    document.getElementById('userWhatsapp').value = user.whatsapp;
+  } else {
+    banner.classList.add('hidden');
+  }
+
+  document.getElementById('balance').innerText = (user ? user.balance : 0).toLocaleString();
+  document.getElementById('feeDisplay').innerText = state.serviceFee.toLocaleString();
+  document.getElementById('vpnPriceInput').value = state.vpnPrice;
+  document.getElementById('serviceFeeInput').value = state.serviceFee;
+  updateFeePreview();
+
+  const loginsEl = document.getElementById('deliveredLogins');
+  if (!user) {
+    loginsEl.innerHTML = 'Register or log in with your unique username to view delivered logins.';
+  } else if (!user.deliveredLogins || !user.deliveredLogins.length) {
+    loginsEl.innerHTML = 'No account logins delivered yet.';
+  } else {
+    loginsEl.innerHTML = user.deliveredLogins.map(item => `
+      <div class="tx-item">
+        <b>${escapeHtml(item.productName)}</b> <span style="color:#94a3b8">(${escapeHtml(item.time)})</span>
+        <div class="cred-box">${escapeHtml(item.credential)}</div>
+      </div>
+    `).join('');
+  }
+
+  const histEl = document.getElementById('history');
+  if (!user || !user.history.length) {
+    histEl.innerHTML = 'No transactions yet.';
+  } else {
+    histEl.innerHTML = user.history.map(h => `<div class="tx-item">${escapeHtml(h)}</div>`).join('');
+  }
+
+  const usersList = Object.values(state.users);
+  document.getElementById('totalUsers').innerText = usersList.length;
+  document.getElementById('totalOrders').innerText = state.orders;
+  document.getElementById('totalRev').innerText = state.revenue.toLocaleString();
+  document.getElementById('totalFees').innerText = state.totalFees.toLocaleString();
+  document.getElementById('totalDeposits').innerText = state.totalDeposits;
+
+  const logsEl = document.getElementById('userList');
+  if (!state.adminLogs.length) {
+    logsEl.innerHTML = 'No activity yet.';
+  } else {
+    logsEl.innerHTML = state.adminLogs.map(l => `<div class="tx-item">${escapeHtml(l)}</div>`).join('');
+  }
+}
+
+renderUI();
+</script>
+</body>
+</html>
