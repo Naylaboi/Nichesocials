@@ -14,20 +14,24 @@ header{background:#05080f;padding:14px 18px;display:flex;justify-content:space-b
 .logo-text{font-weight:900;font-size:22px;line-height:1}
 .logo-text .niche{color:#3b82f6}.logo-text .soc{color:#ffffff}
 .logo-text small{display:block;font-size:9px;letter-spacing:3px;color:#93c5fd;font-weight:700;margin-top:2px}
-nav a{color:#e2e8f0;text-decoration:none;margin-left:12px;font-size:14px;font-weight:bold}
+nav a{color:#e2e8f0;text-decoration:none;margin-left:14px;font-size:14px;font-weight:bold}
 nav a:hover{color:#60a5fa}
-.hero{background:linear-gradient(160deg,#05080f 0%,#0b1d45 55%,#133885 100%);color:white;padding:36px 20px 30px;text-align:center;border-radius:0 0 24px 24px;border-bottom:1px solid #1e3a8a}
-.hero h1{font-size:32px;line-height:1.1}.hero p{margin:14px 0;color:#cbd5e1;font-size:14px}
-.btn{background:#2563eb;color:white;padding:13px 22px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.hero{background:linear-gradient(160deg,#05080f 0%,#0b1d45 55%,#133885 100%);color:white;padding:34px 20px 28px;text-align:left;border-radius:0 0 18px 18px;border-bottom:1px solid #1e3a8a}
+.hero h1{font-size:31px;line-height:1.12}.hero p{margin:12px 0 16px;color:#cbd5e1;font-size:14px}
+.btn{background:#2563eb;color:white;padding:13px 22px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
 .btn:hover{background:#1d4ed8}
 .btn-sm{padding:8px 12px;font-size:12px;border-radius:8px;border:none;cursor:pointer;font-weight:bold}
 .btn-danger{background:#dc2626;color:white}
 .btn-secondary{background:#111827;color:#f8fafc;border:1px solid #334155}
-.card{background:#101726;margin:14px;border-radius:16px;padding:18px;box-shadow:0 6px 20px rgba(0,0,0,.35);border:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.filter-bar{display:flex;gap:8px;overflow-x:auto;padding:8px 14px 4px;scrollbar-width:none}
+.filter-bar::-webkit-scrollbar{display:none}
+.filter-pill{background:#101726;color:#cbd5e1;border:1px solid #26354f;padding:7px 12px;border-radius:8px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap}
+.filter-pill.active{background:#2563eb;color:#ffffff;border-color:#3b82f6}
+.card{background:#101726;margin:12px 14px;border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(0,0,0,.35);border:1px solid #1e293b;border-left:3px solid #2563eb;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .card-left{display:flex;gap:12px;align-items:flex-start}
-.icon{width:48px;height:48px;border-radius:12px;background:#0b1d45;border:1px solid #1e3a8a;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.icon{width:46px;height:46px;border-radius:10px;background:#0b1d45;border:1px solid #1e3a8a;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
 .card h3{font-size:17px;margin-bottom:4px;color:#ffffff}.card p{font-size:13px;color:#94a3b8}
-.cat-tag{display:inline-block;font-size:11px;font-weight:700;color:#93c5fd;background:#0b1d45;border:1px solid #1d4ed8;padding:2px 8px;border-radius:999px;margin-bottom:6px}
+.cat-tag{display:inline-block;font-size:11px;font-weight:700;color:#93c5fd;background:#0b1d45;border:1px solid #1d4ed8;padding:2px 8px;border-radius:6px;margin-bottom:6px}
 .stock-badge{color:#60a5fa;font-weight:700;margin-left:4px}
 .out-badge{color:#f87171;font-weight:700;margin-left:4px}
 .price{font-size:20px;font-weight:900;color:#60a5fa;white-space:nowrap}
@@ -37,24 +41,28 @@ nav a:hover{color:#60a5fa}
 .section{padding:8px 4px}
 .section h2{padding:14px 15px 4px;font-size:24px;color:#ffffff}
 .card h2,.card h3{padding:0}
-input,select,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #26354f;border-radius:10px;background:#070b14;color:#f8fafc}
+input,select,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #26354f;border-radius:8px;background:#070b14;color:#f8fafc}
 input::placeholder,textarea::placeholder{color:#64748b}
 textarea{min-height:110px;resize:vertical;font-family:monospace;font-size:13px}
 .hidden{display:none}
-.wallet{background:linear-gradient(150deg,#05080f 0%,#0b1d45 100%);color:white;border-radius:16px;padding:20px;margin:15px;border:1px solid #1e3a8a}
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px}
+.dash-stat{background:#0b1d45;border:1px solid #1e3a8a;border-radius:10px;padding:14px}
+.dash-stat span{font-size:12px;color:#cbd5e1;display:block}
+.dash-stat b{font-size:20px;color:#93c5fd;margin-top:4px;display:block}
+.wallet{background:linear-gradient(150deg,#05080f 0%,#0b1d45 100%);color:white;border-radius:12px;padding:20px;margin:14px;border:1px solid #1e3a8a;border-left:3px solid #3b82f6}
 .wallet h2{font-size:36px;margin:8px 0;padding:0;color:#ffffff}
-.vacc{background:#070b14;border:1px dashed #3b82f6;border-radius:12px;padding:14px;color:#cbd5e1;margin-top:12px;font-size:13px;line-height:1.5}
-.fee-box{background:#0b1528;border:1px solid #1e3a8a;border-radius:12px;padding:12px;color:#e2e8f0;margin-top:12px;font-size:14px}
-.trust{background:#0b1d45;border:1px solid #1e3a8a;border-radius:10px;padding:12px;margin:15px;font-size:13px;text-align:center;color:#dbeafe}
+.vacc{background:#070b14;border:1px dashed #3b82f6;border-radius:10px;padding:14px;color:#cbd5e1;margin-top:12px;font-size:13px;line-height:1.5}
+.fee-box{background:#0b1528;border:1px solid #1e3a8a;border-radius:10px;padding:12px;color:#e2e8f0;margin-top:12px;font-size:14px}
+.trust{background:#0b1d45;border:1px solid #1e3a8a;border-radius:10px;padding:12px;margin:14px;font-size:13px;text-align:center;color:#dbeafe}
 .admin-top{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px}
-.stat{background:#0b1d45;border:1px solid #1e3a8a;color:white;padding:15px;border-radius:12px}.stat b{font-size:22px;color:#93c5fd}
+.stat{background:#0b1d45;border:1px solid #1e3a8a;color:white;padding:15px;border-radius:10px}.stat b{font-size:22px;color:#93c5fd}
 .tx-item{padding:10px 0;border-bottom:1px solid #1e293b;font-size:13px;color:#e2e8f0}
-.cred-box{background:#070b14;border:1px solid #2563eb;border-radius:10px;padding:10px;margin-top:8px;font-family:monospace;font-size:13px;color:#93c5fd;word-break:break-all}
-.active-user-bar{background:#0b1d45;border:1px solid #2563eb;border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px;color:#eff6ff;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.cred-box{background:#070b14;border:1px solid #2563eb;border-radius:8px;padding:10px;margin-top:8px;font-family:monospace;font-size:13px;color:#93c5fd;word-break:break-all}
+.active-user-bar{background:#0b1d45;border:1px solid #2563eb;border-radius:10px;padding:12px;margin-bottom:12px;font-size:13px;color:#eff6ff;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .prod-admin-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #1e293b}
 .prod-admin-actions{display:flex;gap:6px;flex-shrink:0}
 footer{text-align:center;padding:20px;font-size:13px;color:#64748b}
-.hero-logo{height:58px;background:#ffffff;padding:6px 12px;border-radius:12px;margin-bottom:14px}
+.hero-logo{height:54px;background:#ffffff;padding:6px 12px;border-radius:10px;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -63,9 +71,8 @@ footer{text-align:center;padding:20px;font-size:13px;color:#64748b}
   <img src="logo.png" alt="Niche Socials" class="logo-img" onerror="this.style.display='none';document.getElementById('fallbackLogo').style.display='block'">
   <div id="fallbackLogo" style="display:none" class="logo-text"><span class="niche">NICHE</span> <span class="soc">SOCIALS</span><small>.NAME.NG</small></div>
   <nav>
-    <a href="#" onclick="show('home')">Home</a>
-    <a href="#" onclick="show('wallet')">Wallet</a>
-    <a href="#" onclick="show('adminLogin')">Admin</a>
+    <a href="#home" onclick="show('home');return false;">Home</a>
+    <a href="#dashboard" onclick="openUserPortal();return false;">Dashboard</a>
   </nav>
 </header>
 
@@ -73,39 +80,76 @@ footer{text-align:center;padding:20px;font-size:13px;color:#64748b}
 <div id="home">
   <div class="hero">
     <img src="logo.png" alt="Niche Socials Logo" class="hero-logo" onerror="this.style.display='none'">
-    <h1>Accounts, VPNs &<br>TV Access</h1>
+    <h1>Accounts, VPNs &amp;<br>TV Access</h1>
     <p>Instant login delivery • Trusted • Secure Payment via Paystack</p>
-    <button class="btn" onclick="show('wallet')">Create Account & Fund Wallet</button>
+    <button class="btn" onclick="openUserPortal()">Create Account &amp; Open Dashboard</button>
   </div>
 
   <div class="section">
+    <h2>Browse Categories</h2>
+    <div class="filter-bar" id="categoryFilterBar">
+      <button type="button" class="filter-pill active" data-cat="ALL" onclick="setCategoryFilter('ALL')">All</button>
+      <button type="button" class="filter-pill" data-cat="Facebook accounts" onclick="setCategoryFilter('Facebook accounts')">Facebook accounts</button>
+      <button type="button" class="filter-pill" data-cat="Instagram accounts" onclick="setCategoryFilter('Instagram accounts')">Instagram accounts</button>
+      <button type="button" class="filter-pill" data-cat="TikTok accounts" onclick="setCategoryFilter('TikTok accounts')">TikTok accounts</button>
+      <button type="button" class="filter-pill" data-cat="VPNs" onclick="setCategoryFilter('VPNs')">VPNs</button>
+      <button type="button" class="filter-pill" data-cat="TV access" onclick="setCategoryFilter('TV access')">TV access</button>
+    </div>
+
     <h2>Our Services</h2>
     <div id="servicesList"></div>
 
-    <div class="trust">🛡️ All payments secured by Paystack (Bank Transfer, Card & USSD) • 24/7 support</div>
+    <div class="trust">🛡️ All payments secured by Paystack (Bank Transfer, Card &amp; USSD) • 24/7 support</div>
     <p style="text-align:center;font-size:13px;color:#64748b">nichesocials.name.ng • Trusted digital marketplace</p>
   </div>
 </div>
 
-<!-- WALLET -->
-<div id="wallet" class="hidden">
+<!-- AUTH (SIGN UP / LOGIN WHEN NOT SIGNED IN) -->
+<div id="authView" class="hidden">
   <div class="section">
     <div class="card" style="display:block">
-      <h2>Customer Account</h2>
-      <p style="margin-bottom:8px">Choose a unique username and save your details before funding or ordering.</p>
+      <h2>Create Account or Login</h2>
+      <p style="margin-bottom:8px">Choose a unique username to create your account and open your user dashboard.</p>
 
-      <div id="activeUserBanner" class="active-user-bar hidden">
-        <div id="activeUserSummary"></div>
-        <button class="btn-sm btn-secondary" onclick="logoutUser()">Switch User</button>
-      </div>
-
-      <input id="userHandle" placeholder="Unique Username e.g. chidera_niche (cannot be reused)">
-      <input id="userName" placeholder="Your Full Name e.g. Chidera">
-      <input id="userEmail" type="email" placeholder="Valid Email Address e.g. chidera@gmail.com">
-      <input id="userWhatsapp" type="tel" placeholder="WhatsApp Number for Order Delivery">
+      <input id="authHandle" placeholder="Unique Username e.g. chidera_niche (cannot be reused)">
+      <input id="authName" placeholder="Your Full Name e.g. Chidera">
+      <input id="authEmail" type="email" placeholder="Valid Email Address e.g. chidera@gmail.com">
+      <input id="authWhatsapp" type="tel" placeholder="WhatsApp Number for Order Delivery">
       <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <button class="btn" onclick="saveProfile()">Save / Register Account</button>
+        <button class="btn" onclick="registerUser()">Sign Up &amp; Open Dashboard</button>
         <button class="btn btn-secondary" onclick="loginExistingUser()">Login Existing Username</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- USER DASHBOARD -->
+<div id="dashboard" class="hidden">
+  <div class="section">
+    <h2>User Dashboard</h2>
+
+    <div class="card" style="display:block">
+      <div class="active-user-bar">
+        <div id="activeUserSummary"></div>
+        <button class="btn-sm btn-secondary" onclick="logoutUser()">Logout</button>
+      </div>
+      <div class="dash-grid" style="margin:8px 0 0">
+        <div class="dash-stat">
+          <span>Username</span>
+          <b id="dashUsername">@user</b>
+        </div>
+        <div class="dash-stat">
+          <span>Orders Completed</span>
+          <b id="dashOrders">0</b>
+        </div>
+        <div class="dash-stat">
+          <span>Delivered Logins</span>
+          <b id="dashLoginsCount">0</b>
+        </div>
+        <div class="dash-stat">
+          <span>WhatsApp Delivery</span>
+          <b id="dashWhatsapp" style="font-size:15px;color:#ffffff">-</b>
+        </div>
       </div>
     </div>
 
@@ -189,14 +233,14 @@ footer{text-align:center;padding:20px;font-size:13px;color:#64748b}
     </div>
 
     <div class="card" style="display:block">
-      <h3>Store Pricing & Fees</h3>
+      <h3>Store Pricing &amp; Fees</h3>
       <p style="margin-top:8px">VPN 1 Month Price (₦): <input id="vpnPriceInput" type="number" value="3000"></p>
       <p>Deposit Service Fee (₦): <input id="serviceFeeInput" type="number" value="30"></p>
-      <button class="btn" onclick="updateStoreSettings()">Save Prices & Fee</button>
+      <button class="btn" onclick="updateStoreSettings()">Save Prices &amp; Fee</button>
     </div>
 
     <div class="card" style="display:block">
-      <h3>Customer & Order Logs</h3>
+      <h3>Customer &amp; Order Logs</h3>
       <div id="userList" style="margin-top:8px">No activity yet.</div>
     </div>
   </div>
@@ -227,6 +271,8 @@ const DEFAULT_PRODUCTS = [
   { id: 'tt_acc', name: 'TikTok Account', desc: 'Ready-to-use account • Instant login delivery', price: 8000, icon: '🎬', category: 'TikTok accounts', isVpn: false, credentials: [] },
   { id: 'tv_acc', name: 'TV Access Subscription', desc: 'Streaming access • Instant login delivery', price: 4500, icon: '📺', category: 'TV access', isVpn: false, credentials: [] }
 ];
+
+let selectedCategoryFilter = 'ALL';
 
 function parseCategoryOption(rawVal) {
   const matched = CATEGORIES.find(c => c.key === rawVal || c.label === rawVal || c.icon === rawVal);
@@ -294,11 +340,27 @@ function saveState() {
 }
 
 function show(id) {
-  ['home', 'wallet', 'adminLogin', 'admin'].forEach(x => {
+  ['home', 'authView', 'dashboard', 'adminLogin', 'admin'].forEach(x => {
     document.getElementById(x).classList.add('hidden');
   });
   document.getElementById(id).classList.remove('hidden');
   window.scrollTo(0, 0);
+}
+
+function openUserPortal() {
+  if (getCurrentUser()) {
+    show('dashboard');
+  } else {
+    show('authView');
+  }
+}
+
+function setCategoryFilter(cat) {
+  selectedCategoryFilter = cat;
+  document.querySelectorAll('#categoryFilterBar .filter-pill').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.cat === cat);
+  });
+  renderServices();
 }
 
 function isValidEmail(email) {
@@ -314,11 +376,11 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
-function saveProfile() {
-  const username = normalizeUsername(document.getElementById('userHandle').value);
-  const name = document.getElementById('userName').value.trim();
-  const email = document.getElementById('userEmail').value.trim();
-  const whatsapp = document.getElementById('userWhatsapp').value.trim();
+function registerUser() {
+  const username = normalizeUsername(document.getElementById('authHandle').value);
+  const name = document.getElementById('authName').value.trim();
+  const email = document.getElementById('authEmail').value.trim();
+  const whatsapp = document.getElementById('authWhatsapp').value.trim();
 
   if (!isValidUsername(username)) {
     alert('Choose a unique username of 3-24 characters using lowercase letters, numbers, dots, underscores, or hyphens.');
@@ -329,20 +391,8 @@ function saveProfile() {
     return;
   }
 
-  const currentUser = getCurrentUser();
-  const existingRecord = state.users[username];
-
-  if (existingRecord && (!currentUser || currentUser.username !== username)) {
-    alert(`The username "${username}" is already taken by another user. Please choose a different username or use "Login Existing Username".`);
-    return;
-  }
-
-  if (currentUser && currentUser.username === username) {
-    currentUser.name = name;
-    currentUser.email = email;
-    currentUser.whatsapp = whatsapp;
-    saveState();
-    alert(`Profile updated for @${username}.`);
+  if (state.users[username]) {
+    alert(`The username "${username}" is already taken by another user. Choose a different username or click "Login Existing Username".`);
     return;
   }
 
@@ -351,27 +401,29 @@ function saveProfile() {
   state.activeUsername = username;
   state.adminLogs.unshift(`👤 New User: @${username} (${name} | ${email} | WA: ${whatsapp})`);
   saveState();
-  alert(`Account registered with unique username @${username}! You can now fund your wallet via Paystack.`);
+  show('dashboard');
+  alert(`Welcome @${username}! Your account is created and your user dashboard is now open.`);
 }
 
 function loginExistingUser() {
-  const username = normalizeUsername(document.getElementById('userHandle').value);
+  const username = normalizeUsername(document.getElementById('authHandle').value);
   if (!username || !state.users[username]) {
-    alert('No registered account found with that username. Fill all fields and click "Save / Register Account" to claim a new unique username.');
+    alert('No registered account found with that username. Fill all fields and click "Sign Up & Open Dashboard" to claim a new unique username.');
     return;
   }
   state.activeUsername = username;
   saveState();
-  alert(`Logged in as @${username}.`);
+  show('dashboard');
 }
 
 function logoutUser() {
   state.activeUsername = null;
-  document.getElementById('userHandle').value = '';
-  document.getElementById('userName').value = '';
-  document.getElementById('userEmail').value = '';
-  document.getElementById('userWhatsapp').value = '';
+  document.getElementById('authHandle').value = '';
+  document.getElementById('authName').value = '';
+  document.getElementById('authEmail').value = '';
+  document.getElementById('authWhatsapp').value = '';
   saveState();
+  show('authView');
 }
 
 function updateFeePreview() {
@@ -384,7 +436,8 @@ function updateFeePreview() {
 function payWithPaystack() {
   const user = getCurrentUser();
   if (!user || !isValidEmail(user.email)) {
-    alert('Please register/login with your unique username, name, email, and WhatsApp number first.');
+    alert('Please sign up or log in with your unique username first.');
+    show('authView');
     return;
   }
 
@@ -440,8 +493,8 @@ function buyById(productId) {
 
   const user = getCurrentUser();
   if (!user) {
-    alert('Please register or log in with your unique username and fund your wallet first.');
-    show('wallet');
+    alert('Please sign up or log in with your unique username and fund your wallet first.');
+    show('authView');
     return;
   }
 
@@ -453,8 +506,8 @@ function buyById(productId) {
 
   const price = item.isVpn ? state.vpnPrice : item.price;
   if (user.balance < price) {
-    alert(`Insufficient balance (₦${user.balance.toLocaleString()}). You need ₦${price.toLocaleString()}. Please fund your wallet first.`);
-    show('wallet');
+    alert(`Insufficient balance (₦${user.balance.toLocaleString()}). You need ₦${price.toLocaleString()}. Please fund your wallet on your dashboard first.`);
+    show('dashboard');
     return;
   }
 
@@ -479,11 +532,13 @@ function buyById(productId) {
     user.history.unshift(`🛒 [${time}] Bought ${item.name} (-₦${price.toLocaleString()}) → Login delivered`);
     state.adminLogs.unshift(`📦 Auto-Delivered: ${item.name} (₦${price.toLocaleString()}) to @${user.username} | Remaining stock: ${item.credentials.length}`);
     saveState();
-    alert(`Purchase successful for ${item.name}!\n\nYour Account Login:\n${assignedCredential}\n\nSaved under "My Purchased Logins" in your account.`);
+    show('dashboard');
+    alert(`Purchase successful for ${item.name}!\n\nYour Account Login:\n${assignedCredential}\n\nSaved under "My Purchased Logins" on your dashboard.`);
   } else {
     user.history.unshift(`🛒 [${time}] Ordered ${item.name} (-₦${price.toLocaleString()})`);
     state.adminLogs.unshift(`📦 Order: ${item.name} (₦${price.toLocaleString()}) by @${user.username} | WA: ${user.whatsapp}`);
     saveState();
+    show('dashboard');
     alert(`Order confirmed for ${item.name}! We will deliver to your WhatsApp (${user.whatsapp}) shortly.`);
   }
 }
@@ -616,12 +671,16 @@ function updateStoreSettings() {
 
 function renderServices() {
   const container = document.getElementById('servicesList');
-  if (!state.products.length) {
-    container.innerHTML = '<div class="card"><p>No services available right now.</p></div>';
+  const filteredProducts = selectedCategoryFilter === 'ALL'
+    ? state.products
+    : state.products.filter(p => parseCategoryOption(p.category || p.icon).category === selectedCategoryFilter);
+
+  if (!filteredProducts.length) {
+    container.innerHTML = '<div class="card"><p>No services in this category right now.</p></div>';
     return;
   }
 
-  container.innerHTML = state.products.map(p => {
+  container.innerHTML = filteredProducts.map(p => {
     const parsedCat = parseCategoryOption(p.category || p.icon);
     const displayPrice = p.isVpn ? state.vpnPrice : p.price;
     const creds = Array.isArray(p.credentials) ? p.credentials : [];
@@ -684,17 +743,19 @@ function renderUI() {
   renderAdminProducts();
 
   const user = getCurrentUser();
-  const banner = document.getElementById('activeUserBanner');
   if (user) {
-    banner.classList.remove('hidden');
     document.getElementById('activeUserSummary').innerHTML =
-      `Active Account: <b>@${escapeHtml(user.username)}</b> (${escapeHtml(user.name)})`;
-    document.getElementById('userHandle').value = user.username;
-    document.getElementById('userName').value = user.name;
-    document.getElementById('userEmail').value = user.email;
-    document.getElementById('userWhatsapp').value = user.whatsapp;
+      `Signed in as <b>@${escapeHtml(user.username)}</b> (${escapeHtml(user.name)})`;
+    document.getElementById('dashUsername').innerText = `@${user.username}`;
+    document.getElementById('dashOrders').innerText = user.orders || 0;
+    document.getElementById('dashLoginsCount').innerText = (user.deliveredLogins || []).length;
+    document.getElementById('dashWhatsapp').innerText = user.whatsapp || '-';
   } else {
-    banner.classList.add('hidden');
+    document.getElementById('activeUserSummary').innerHTML = '';
+    document.getElementById('dashUsername').innerText = '@user';
+    document.getElementById('dashOrders').innerText = '0';
+    document.getElementById('dashLoginsCount').innerText = '0';
+    document.getElementById('dashWhatsapp').innerText = '-';
   }
 
   document.getElementById('balance').innerText = (user ? user.balance : 0).toLocaleString();
@@ -705,7 +766,7 @@ function renderUI() {
 
   const loginsEl = document.getElementById('deliveredLogins');
   if (!user) {
-    loginsEl.innerHTML = 'Register or log in with your unique username to view delivered logins.';
+    loginsEl.innerHTML = 'Sign up or log in with your unique username to view delivered logins.';
   } else if (!user.deliveredLogins || !user.deliveredLogins.length) {
     loginsEl.innerHTML = 'No account logins delivered yet.';
   } else {
@@ -739,7 +800,16 @@ function renderUI() {
   }
 }
 
+function handleDirectAdminRoute() {
+  const hash = window.location.hash.toLowerCase();
+  const search = window.location.search.toLowerCase();
+  if (hash === '#admin' || search.includes('admin=1') || search.includes('admin')) {
+    show('adminLogin');
+  }
+}
+
 renderUI();
+handleDirectAdminRoute();
 </script>
 </body>
 </html>
